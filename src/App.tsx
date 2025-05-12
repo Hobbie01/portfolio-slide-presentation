@@ -134,8 +134,13 @@ const slides = [
       >
         <h2 className="text-xl font-bold mb-2">สรุป / เหมาะกับตำแหน่งนี้</h2>
         <ul className="text-base mb-2 list-disc list-inside">
-          <li>พัฒนา API ได้เร็วและโค้ดสะอาด</li>
+          <li>มีประสบการณ์ พัฒนา ระบบ Back End</li>
           <li>เข้าใจระบบจากฝั่ง developer จริง</li>
+          <li>มีความรู้ด้านการพัฒนา API</li>
+          <li>มีความรู้ด้านการพัฒนา Web Application</li>
+          <li>มีความรู้ด้านการพัฒนา Automation</li>
+          <li>มีความรู้ด้านการพัฒนา Web Scraping</li>
+          <li>สามารถ พัฒนาระบบที่ช่วยลด cost และเพิ่มประสิทธิภาพให้กับบริษัทได้</li>
           <li>พร้อมเรียนรู้สิ่งใหม่และทำงานกับทีม</li>
         </ul>
       </motion.div>
@@ -155,7 +160,7 @@ const slides = [
         </h2>
         <div className="flex gap-6 slide-contact">
           <motion.a
-            href="mailto:your@email.com"
+            href="mailto:phongsiri.4work@gmail.com"
             whileHover={{ scale: 1.2 }}
             className="text-red-500"
             aria-label="Email"
@@ -163,7 +168,7 @@ const slides = [
             <SiGmail className="text-4xl icon-bounce-hover" />
           </motion.a>
           <motion.a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/phongsiri-khonman-618809359/"
             whileHover={{ scale: 1.2 }}
             className="text-blue-700"
             aria-label="LinkedIn"
@@ -173,7 +178,7 @@ const slides = [
             <SiLinkedin className="text-4xl icon-bounce-hover" />
           </motion.a>
           <motion.a
-            href="https://github.com/yourprofile"
+            href="https://github.com/Hobbie01"
             whileHover={{ scale: 1.2 }}
             className="text-gray-800"
             aria-label="GitHub"
@@ -184,13 +189,11 @@ const slides = [
           </motion.a>
         </div>
         <div className="text-base mt-4 text-center">
-          พงษ์ศิริ คนหมั่น | you@email.com <br />
-          github.com/username <br />
-          <Smartphone className="inline w-5 h-5 -mt-1 mr-1 icon-bounce-hover" /> 012-345-6789
+          พงษ์ศิริ คนหมั่น | phongsiri.4work@gmail.com <br />
+          github.com/Hobbie01 <br />
+          <Smartphone className="inline w-5 h-5 -mt-1 mr-1 icon-bounce-hover" /> 093-049-4883
         </div>
-        <div className="text-xs text-white/80 mt-1">
-          * QR LinkedIn เพิ่มเติมได้ภายหลัง
-        </div>
+
       </motion.div>
     ),
   },
@@ -242,7 +245,11 @@ export default function App() {
             "นักพัฒนา Backend เชี่ยวชาญ TypeScript, Python, JavaScript, Node.js, PostgreSQL\nสนุกกับการสร้างระบบที่แก้ปัญหาจริงและ scale ได้"
           }
           ProfileIcon={
-            <SiTypescript className="w-16 h-16 text-violet-500 dark:text-violet-300 icon-bounce-hover" />
+            <img
+              src="/assets/my-photo.png"
+              alt="My profile"
+              className="object-cover w-28 h-28 rounded-full shadow-md"
+            />
           }
           badges={skillBadges.map((item, i) => (
             <SkillBadge
