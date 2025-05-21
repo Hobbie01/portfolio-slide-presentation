@@ -25,7 +25,7 @@ const workTimeline: TimelineItem[] = [
     icon: <FaLaptopCode className="text-2xl icon-bounce-hover" />, org: "Freelance", period: "2022-ปัจจุบัน", title: "Full Stack/Automation", desc: "พัฒนาเว็บ, API, งานโปรเจกต์สั้น & ปรึกษา", effect: "animate-pulse scale-110"
   },
   {
-    icon: <FaNodeJs className="text-2xl icon-bounce-hover" />, org: "Truewave", period: "2022-ปัจจุบัน", title: "Backend ด้วย TypeScript/PostgreSQL", desc: "ระบบ PDF, อีเมล, Automation", effect: "float-anim"
+    icon: <FaNodeJs className="text-2xl icon-bounce-hover" />, org: "Throughwave", period: "2022-ปัจจุบัน", title: "Backend ด้วย TypeScript/PostgreSQL", desc: "ระบบ PDF, อีเมล, Automation", effect: "float-anim"
   },
   {
     icon: <FaBriefcase className="text-2xl icon-bounce-hover" />, org: "NMB-Minebea (Intern)", period: "2021", title: "Windows app, Flutter web/mobile", desc: "", effect: "pulse-anim"
