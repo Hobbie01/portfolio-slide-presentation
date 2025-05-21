@@ -4,7 +4,7 @@ import { FaReact, FaNodeJs, FaGitAlt, FaDocker, FaFacebook, FaRegFileAlt } from 
 import { FaLaptopCode, FaBriefcase } from "react-icons/fa";
 import { SiTypescript, SiPostgresql, SiPrisma, SiDocker as SiDockerIcon, SiSupabase, SiTailwindcss, SiGmail, SiLinkedin, SiPython, SiJavascript } from "react-icons/si";
 import { BiTestTube } from "react-icons/bi";
-import { Moon, Sun, Smartphone } from "lucide-react";
+import { Smartphone } from "lucide-react";
 import PortfolioHeader from "./components/PortfolioHeader";
 import SkillBadge from "./components/SkillBadge";
 import SlideSection from "./components/SlideSection";
@@ -15,6 +15,10 @@ import ParticleBackground from "./components/ParticleBackground";
 import JSGraderProject from "./components/JSGraderProject";
 import CreditOCRProject from "./components/CreditOCRProject";
 import FacebookBotProject from "./components/FacebookBotProject";
+import businessSecurityIcon from '../public/assets/business-security.png';
+import digitalIdentityIcon from '../public/assets/digital-identity-key.png';
+import metropoliceguardLogo from '../public/assets/metropoliceguard-logo.png';
+import ndidLogo from '../public/assets/ndid-logo.png';
 
 const workTimeline: TimelineItem[] = [
   {
@@ -56,7 +60,7 @@ const slides = [
           <SiTailwindcss className="w-6 h-6 icon-bounce-hover" /> Slide 1: Intro
         </h2>
         <p className="mt-2 italic text-base text-center max-w-md">
-          นักพัฒนา Backend ที่เชี่ยวชาญ API แบบไร้ Framework
+          นักพัฒนา Backend 
         </p>
         <div className="flex gap-10 justify-center items-center">
           <SiTypescript className="text-blue-500 text-6xl animate-bounce icon-bounce-hover" />
@@ -200,17 +204,15 @@ const slides = [
 ];
 
 export default function App() {
-  const [dark, setDark] = useState(true);
   const [current, setCurrent] = useState(0);
   const total = slides.length;
 
   useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } else {
+    document.documentElement.classList.add("dark");
+    return () => {
       document.documentElement.classList.remove("dark");
-    }
-  }, [dark]);
+    };
+  }, []);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -227,17 +229,6 @@ export default function App() {
       <ParticleBackground />
       <StarBackground />
       <div className="min-h-screen w-full text-gray-900 dark:text-white font-sans transition-colors duration-300 relative z-20 bg-zinc-900/60">
-        <button
-          className="fixed z-30 top-3 right-4 md:top-6 md:right-10 bg-zinc-800/60 dark:bg-zinc-100/90 border border-zinc-500 dark:border-zinc-700 rounded-full p-2 shadow-lg hover:scale-110 transition text-white dark:text-zinc-900"
-          onClick={() => setDark((d) => !d)}
-          aria-label="Toggle dark mode"
-        >
-          {dark ? (
-            <Sun className="w-6 h-6 animate-spin icon-bounce-hover" />
-          ) : (
-            <Moon className="w-6 h-6 icon-bounce-hover" />
-          )}
-        </button>
         <PortfolioHeader
           name="พงษ์ศิริ คนหมั่น"
           title="Backend Software Engineer"
@@ -261,6 +252,31 @@ export default function App() {
             />
           ))}
         />
+        <SlideSection title="โปรเจคที่เคยร่วมพัฒนา">
+          <div className="flex gap-4 items-start bg-zinc-900/80 rounded-xl p-5 shadow-lg mb-6 border border-zinc-700/50">
+            <img src={metropoliceguardLogo} alt="MetropoliceGuard Logo" className="w-16 h-16 object-contain bg-white rounded-full p-1" />
+            <div>
+              <div className="font-semibold text-lg text-white">ระบบ MetropoliceGuard</div>
+              <div className="text-zinc-200 text-base mt-2">
+                MetropoliceGuard เป็นระบบบริการข้อมูลธุรกิจรักษาความปลอดภัย พัฒนาขึ้นเพื่อสนับสนุนงานของกองบัญชาการตำรวจนครบาล โดยมีวัตถุประสงค์หลักเพื่ออำนวยความสะดวกในการดำเนินการด้านใบอนุญาตสำหรับผู้ประกอบการในธุรกิจรักษาความปลอดภัย ครอบคลุมถึง<br/><br/>
+                - การยื่นขอใบอนุญาตเป็นเจ้าหน้าที่รักษาความปลอดภัย (รปภ.)<br/>
+                - การขออนุญาตจัดตั้งสถานฝึกอบรม<br/>
+                - การจดทะเบียนบริษัทที่ประกอบกิจการรักษาความปลอดภัย<br/><br/>
+                ระบบนี้ช่วยเพิ่มประสิทธิภาพในการบริหารจัดการข้อมูล และลดขั้นตอนการดำเนินงานด้านเอกสารของหน่วยงานภาครัฐและภาคเอกชน
+              </div>
+            </div>
+          </div>
+          <div className="flex gap-4 items-start bg-zinc-900/80 rounded-xl p-5 shadow-lg border border-zinc-700/50">
+            <img src={ndidLogo} alt="NDID Logo" className="w-16 h-16 object-contain bg-white rounded-full p-1" />
+            <div>
+              <div className="font-semibold text-lg text-white">ระบบ Membership (NDID Contract)</div>
+              <div className="text-zinc-200 text-base mt-2">
+                Membership System เป็นระบบที่พัฒนาขึ้นภายใต้สัญญาว่าจ้างกับบริษัท NDID (National Digital ID) โดยมีเป้าหมายเพื่อบริหารจัดการสมาชิก (membership management) และการให้บริการอื่น ๆ ที่เกี่ยวข้องกับการยืนยันตัวตนดิจิทัล (Digital ID)<br/><br/>
+                ระบบนี้มีการเชื่อมต่อกับฐานข้อมูลของ <span className="font-semibold">กรมพัฒนาธุรกิจการค้า (DBD)</span> เพื่อดึงข้อมูลนิติบุคคลมาใช้งานในกระบวนการตรวจสอบและยืนยันตัวตนอย่างปลอดภัยและถูกต้องตามกฎหมาย
+              </div>
+            </div>
+          </div>
+        </SlideSection>
         <div className="w-full bg-zinc-900/60 py-10 px-4 flex flex-col items-center border-t border-gray-800">
           <h2 className="text-2xl font-bold mb-4 text-violet-200 dark:text-violet-400 flex items-center gap-2">
             <SiTypescript className="w-7 h-7 float-anim icon-bounce-hover" /> Presentation Slides (สัมภาษณ์งาน)
